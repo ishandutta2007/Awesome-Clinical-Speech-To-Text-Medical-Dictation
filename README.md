@@ -67,9 +67,9 @@ Welcome to the ultimate curated directory of **clinical speech-to-text platforms
 
 > Open-source medical speech recognition foundation models and toolkits provide privacy-centric, self-hostable alternatives to proprietary cloud services.
 
-*Table sorted by GitHub Star Count (Descending).* 🌟
+*Table sorted by GitHub Stars_Count (Descending).* 🌟
 
-| Project / Model | GitHub Stars | License | Architecture / Focus | Key Features & Benchmark Performance |
+| Project / Model | GitHub_Stars | License | Architecture / Focus | Key Features & Benchmark Performance |
 | :--- | :--- | :--- | :--- | :--- |
 | **[Whisper](https://github.com/openai/whisper)** | [![Stars](https://img.shields.io/github/stars/openai/whisper?style=social&color=white)](https://github.com/openai/whisper/stargazers) | MIT | Multilingual Transformer ASR | **The baseline model for modern ASR.** Trained on 680k hours of data. Serves as the foundation for medical fine-tuning projects like MedWhisper. |
 | **[whisper.cpp](https://github.com/ggerganov/whisper.cpp)** | [![Stars](https://img.shields.io/github/stars/ggerganov/whisper.cpp?style=social&color=white)](https://github.com/ggerganov/whisper.cpp/stargazers) | MIT | High-performance C/C++ | **Edge clinical inference.** Runs Whisper models locally on workstation CPUs/GPUs with low memory footprint and zero external network calls. |
