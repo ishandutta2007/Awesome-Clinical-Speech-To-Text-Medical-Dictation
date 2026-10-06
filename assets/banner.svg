@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+
+    <!-- Glowing Text & Card Filters -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+
+    <!-- Glassmorphism Card Gradient -->
+    <linearGradient id="glassGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.03"/>
+    </linearGradient>
+    
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#c084fc"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .title { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 800; font-size: 42px; fill: #ffffff; }
+    .subtitle { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 500; font-size: 20px; fill: #93c5fd; }
+    .badge-text { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-weight: 600; font-size: 13px; fill: #38bdf8; }
+    
+    /* Dynamic Animation Effects */
+    @keyframes pulseWave {
+      0%, 100% { transform: scaleY(0.3); opacity: 0.5; }
+      50% { transform: scaleY(1.1); opacity: 1; }
+    }
+    
+    @keyframes floatParticle {
+      0% { transform: translateY(0px) rotate(0deg); opacity: 0.2; }
+      50% { transform: translateY(-25px) rotate(180deg); opacity: 0.8; }
+      100% { transform: translateY(0px) rotate(360deg); opacity: 0.2; }
+    }
+
+    @keyframes scanline {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    .wave-bar { transform-origin: bottom; animation: pulseWave 2s ease-in-out infinite; }
+    .w1 { animation-delay: 0.0s; }
+    .w2 { animation-delay: 0.2s; }
+    .w3 { animation-delay: 0.4s; }
+    .w4 { animation-delay: 0.6s; }
+    .w5 { animation-delay: 0.8s; }
+    
+    .particle { animation: floatParticle 8s ease-in-out infinite; }
+    .p2 { animation-delay: 2s; }
+    .p3 { animation-delay: 4s; }
+  </style>
+
+  <!-- Base Canvas -->
+  <rect width="1200" height="400" rx="16" fill="url(#bgGrad)"/>
+  
+  <!-- Subtle Grid Pattern Background -->
+  <g opacity="0.08" stroke="#ffffff" stroke-width="1">
+    <path d="M 0 50 L 1200 50 M 0 100 L 1200 100 M 0 150 L 1200 150 M 0 200 L 1200 200 M 0 250 L 1200 250 M 0 300 L 1200 300 M 0 350 L 1200 350" />
+    <path d="M 100 0 L 100 400 M 200 0 L 200 400 M 300 0 L 300 400 M 400 0 L 400 400 M 500 0 L 500 400 M 600 0 L 600 400 M 700 0 L 700 400 M 800 0 L 800 400 M 900 0 L 900 400 M 1000 0 L 1000 400 M 1100 0 L 1100 400" />
+  </g>
+
+  <!-- Dynamic Background Ambient Floating Nodes -->
+  <g class="particle p1" opacity="0.4">
+    <circle cx="150" cy="120" r="40" fill="#38bdf8" filter="blur(20px)"/>
+    <circle cx="1050" cy="280" r="60" fill="#818cf8" filter="blur(25px)"/>
+  </g>
+  <g class="particle p2" opacity="0.3">
+    <circle cx="900" cy="90" r="50" fill="#c084fc" filter="blur(22px)"/>
+    <circle cx="250" cy="320" r="45" fill="#0284c7" filter="blur(18px)"/>
+  </g>
+
+  <!-- Background Dynamic Audio Waveforms (Positioned below text area) -->
+  <g transform="translate(60, 260)" opacity="0.35">
+    <rect class="wave-bar w1" x="20" y="0" width="8" height="90" rx="4" fill="#38bdf8"/>
+    <rect class="wave-bar w2" x="36" y="0" width="8" height="120" rx="4" fill="#818cf8"/>
+    <rect class="wave-bar w3" x="52" y="0" width="8" height="70" rx="4" fill="#c084fc"/>
+    <rect class="wave-bar w4" x="68" y="0" width="8" height="140" rx="4" fill="#38bdf8"/>
+    <rect class="wave-bar w5" x="84" y="0" width="8" height="100" rx="4" fill="#818cf8"/>
+    <rect class="wave-bar w2" x="100" y="0" width="8" height="60" rx="4" fill="#38bdf8"/>
+    <rect class="wave-bar w4" x="116" y="0" width="8" height="110" rx="4" fill="#c084fc"/>
+  </g>
+
+  <g transform="translate(1000, 260)" opacity="0.35">
+    <rect class="wave-bar w5" x="20" y="0" width="8" height="110" rx="4" fill="#c084fc"/>
+    <rect class="wave-bar w3" x="36" y="0" width="8" height="70" rx="4" fill="#38bdf8"/>
+    <rect class="wave-bar w1" x="52" y="0" width="8" height="130" rx="4" fill="#818cf8"/>
+    <rect class="wave-bar w4" x="68" y="0" width="8" height="80" rx="4" fill="#38bdf8"/>
+    <rect class="wave-bar w2" x="84" y="0" width="8" height="120" rx="4" fill="#c084fc"/>
+  </g>
+
+  <!-- Glassmorphism Container Card for Title & Subtitle (Ensures Text remains crisp & in foreground) -->
+  <rect x="70" y="50" width="1060" height="300" rx="20" fill="url(#glassGrad)" stroke="#ffffff" stroke-opacity="0.18" stroke-width="1.5" filter="url(#cardShadow)"/>
+  
+  <!-- Decorative Top Card Accent Line -->
+  <rect x="70" y="50" width="1060" height="4" rx="2" fill="url(#accentGrad)"/>
+
+  <!-- Foreground Icons & Badges -->
+  <g transform="translate(110, 95)">
+    <!-- Pill Badge -->
+    <rect x="0" y="0" width="280" height="32" rx="16" fill="#0f172a" fill-opacity="0.6" stroke="#38bdf8" stroke-opacity="0.5"/>
+    <circle cx="16" cy="16" r="6" fill="#34d399"/>
+    <text x="32" y="21" class="badge-text">CLINICAL SPEECH AI &amp; DICTATION</text>
+  </g>
+
+  <!-- Foreground Title Text -->
+  <g transform="translate(110, 175)">
+    <text class="title" filter="url(#glow)">Awesome Clinical Speech-To-Text</text>
+    <text class="subtitle" y="45">&amp; Medical Dictation Ecosystem 🩺 🎙️</text>
+    <text font-family="system-ui, sans-serif" font-size="15" fill="#94a3b8" y="90">
+      Curated Ambient AI Scribes • Medical ASR Models • EHR Integration • HIPAA Compliance
+    </text>
+  </g>
+
+  <!-- Decorative Medical Audio Wave Graphic in Card Foreground (Right aligned) -->
+  <g transform="translate(870, 110)" opacity="0.9">
+    <!-- Pulse Line / EKG Concept -->
+    <path d="M 0 100 L 40 100 L 55 60 L 70 140 L 85 40 L 100 120 L 115 90 L 130 100 L 210 100" 
+          fill="none" stroke="url(#accentGrad)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Microphones & Pulse Nodes -->
+    <circle cx="85" cy="40" r="5" fill="#38bdf8"/>
+    <circle cx="70" cy="140" r="5" fill="#c084fc"/>
+  </g>
+</svg>
